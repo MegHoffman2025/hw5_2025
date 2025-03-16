@@ -1,0 +1,139 @@
+/* step 1 */
+
+#logo {
+    width: 475px;
+    animation-name: fade;
+    animation-duration: 5s;
+   }
+  @keyframes fade {
+    from {width: 25px; opacity: 0;}
+    to {width: 475px; opacity: 1;}
+
+  }
+
+body {
+    font-family: "Poppins", serif;
+    background-image: ulr("../images/concrete_seamless.png");
+    background-color: #f1f1f1;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav_links{
+    display: flex;
+    flex-direction: column;
+}
+
+nav a {
+    color: #00e;
+}
+  
+nav a:visited{
+    color: #00e;
+}
+
+.card > header {
+    background-color: #288088;
+    border: 2px solid #45ADAD;
+    padding: 20px 0px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+.card {
+    flex-basis: 450px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+.pricing {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.gallery > img {
+    border: 10px solid #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media screen and (min-width: 900px) {
+    
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .nav_links {
+        flex-direction: row;
+    }
+
+    .card {
+        flex-basis: 275px;
+    }
+
+    .pricing {
+        align-items: center;
+    }
+
+    body > header {
+        position: sticky;
+        top: 0px;
+        width: 100%;
+    }
+
+}
+
+@media screen and (prefers-reduced-motion){
+    #logo {
+        animation-duration: 0s;
+    }
+}
+
+@media print and (orientation: portrait){
+    body {
+        font-family: Arial, Helvetica;
+        background-image: none;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    .nav_links {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .pricing {
+        align-items: flex-end;
+    }
+
+    .card {
+        border: solid 2px #45ADDD;
+        flex-basis: 325px;
+    }
+
+    #gallery {
+        visibility: hidden;
+    }
+
+    .gallery {
+        visibility: hidden;
+    } 
+
+    .card li:nth-child(2)::after{
+        content: "👍";
+    }
+}
