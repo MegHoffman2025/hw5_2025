@@ -11,23 +11,27 @@
 
   }
 
+   /* Adding Fonts */
 body {
     font-family: "Poppins", serif;
     background-image: ulr("../images/concrete_seamless.png");
     background-color: #f1f1f1;
 }
 
+/* Making header have correct orientation */
 header {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* Making links in header have correct orientation  */
 .nav_links{
     display: flex;
     flex-direction: column;
 }
-
+/* 
+Making the active and visited nav links the same so color doesn't change */
 nav a {
     color: #00e;
 }
@@ -36,6 +40,7 @@ nav a:visited{
     color: #00e;
 }
 
+/* Adding style to card class */
 .card > header {
     background-color: #288088;
     border: 2px solid #45ADAD;
@@ -44,6 +49,7 @@ nav a:visited{
     border-top-right-radius: 50px;
 }
 
+/* making card have no weird background */
 .card {
     flex-basis: 450px;
     border-top-left-radius: 50px;
@@ -56,12 +62,14 @@ nav a:visited{
     flex-wrap: wrap;
 }
 
+/* redefining gallery images */
 .gallery > img {
     border: 10px solid #50C7C7;
     margin: 10px;
     width: 300px;
 }
 
+/* Making the gallery a flex piece */
 .gallery{
     display: flex;
     flex-wrap: wrap;
@@ -70,6 +78,7 @@ nav a:visited{
 
 @media screen and (min-width: 900px) {
     
+    /* changing direction of header */
     header {
         flex-direction: row;
         justify-content: space-between;
@@ -87,6 +96,7 @@ nav a:visited{
         align-items: center;
     }
 
+    /* making header sticky so sticks to top when moves */
     body > header {
         position: sticky;
         top: 0px;
@@ -95,6 +105,7 @@ nav a:visited{
 
 }
 
+/* turning off animation for people who prefer reduced motion */
 @media screen and (prefers-reduced-motion){
     #logo {
         animation-duration: 0s;
@@ -111,6 +122,7 @@ nav a:visited{
         width: 100%;
     }
 
+    /* making nav links align spread */
     .nav_links {
         flex-direction: row;
         justify-content: space-around;
@@ -120,11 +132,13 @@ nav a:visited{
         align-items: flex-end;
     }
 
+    /* This did not look right, but instructions were followed exactly */
     .card {
         border: solid 2px #45ADDD;
         flex-basis: 325px;
     }
 
+    /* hiding the gallery */
     #gallery {
         visibility: hidden;
     }
@@ -133,6 +147,7 @@ nav a:visited{
         visibility: hidden;
     } 
 
+    /* putting a thumbs up on every 2nd list item */
     .card li:nth-child(2)::after{
         content: "👍";
     }
